@@ -1,0 +1,16 @@
+body {
+    margin: 70px 10px 10px;
+}
+
+nav {
+    position: fixed;
+    padding: 10px;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    background: #fff;
+}
+
+strong {
+    display: block;
+}
