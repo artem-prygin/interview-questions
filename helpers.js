@@ -1,4 +1,4 @@
-export const generateAccordionItems = (data) => shuffleArray(data)
+export const generateAccordionItems = (data) => data
     .map((x, index) => {
         return `
             <div class="accordion-item">
@@ -20,23 +20,14 @@ export const generateAccordionItems = (data) => shuffleArray(data)
                         ${x.answer}
                         <div class="links">
                             ${x.links ? x.links.map((link, index) => {
-                                if (index === 0) {
-                                    return `<strong class="mt-1">Links:</strong><a href="${link}">${link}</a>`
-                                }
-                                return `<a href="${link}">${link}</a>`;
-                            }).join('<br>') : ''}
+            if (index === 0) {
+                return `<strong class="mt-1">Links:</strong><a href="${link}" target="_blank">${link}</a>`;
+            }
+            return `<a href="${link}" target="_blank">${link}</a>`;
+        }).join('<br>') : ''}
                         </div>
                     </div>
                 </div>
             </div>
         `;
-}).join('');
-
-export const shuffleArray = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-
-    return array;
-}
+    }).join('');
