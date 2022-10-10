@@ -6,6 +6,7 @@ nav {
     position: fixed;
     padding: 10px;
     top: 0;
+    left: 0;
     z-index: 5;
     width: 100%;
     background: #fff;
@@ -13,4 +14,25 @@ nav {
 
 strong {
     display: block;
+}
+
+@media screen and (max-width: 575px) {
+    body {
+        margin-top: 120px;
+    }
+
+    nav {
+        padding: 10px 3px;
+    }
+
+    nav button {
+        margin-bottom: 5px;
+        font-size: 12px !important;
+    }
+
+    nav strong {
+        display: block;
+    }
+}
+
 }
